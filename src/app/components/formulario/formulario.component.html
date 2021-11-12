@@ -1,0 +1,32 @@
+<div class="text-center contenido">
+<p>formulario works!</p>
+
+<form [formGroup]="form">
+  <input type="text" class="form-control" [ngClass]="{'error-validation': sub && f['user'].errors, 'success-validation':user.valid && (user.dirty || user.touched) }" formControlName="user">
+  <button class="btn btn-success" (click)="validacion()"> Accept </button>
+</form>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of users">
+      <th scope="row">{{item.id | slice: 0 : 10}}...</th> 
+      <td>{{item.user}}</td>
+      <td><button class="btn btn-primary" (click)="edit(item)"> Editar </button></td>
+      <td><button class="btn btn-danger" (click)="delete(item.id)"> Eliminar </button></td>
+      <td><button class="btn" (click)="disEnable(item)" [ngClass]="{'btn-success': item.status == true ,
+        'btn-light': item.status == false }"> Activar </button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+

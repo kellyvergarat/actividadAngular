@@ -1,0 +1,14 @@
+.contenido {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.error-validation{
+  color:red;
+  border: solid 1px red;
+}
+
+.success-validation{
+  color:green;
+  border: solid 1px green;
+}
